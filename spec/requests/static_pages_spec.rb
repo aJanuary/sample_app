@@ -6,6 +6,11 @@ describe 'StaticPages' do
       visit '/static_pages/home'
       page.should have_selector('h1', :text => 'Sample App')
     end
+
+    it "should have the title 'Home'" do
+      visit '/static_pages/home'
+      page.should have_selector('title', :text => '| Home')
+    end
   end
 
   describe 'Help Page' do
